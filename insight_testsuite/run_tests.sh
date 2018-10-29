@@ -9,8 +9,7 @@ declare -r color_norm="${color_start}0m"
 GRADER_ROOT=$(dirname ${BASH_SOURCE})
 
 # PROJECT_PATH=${GRADER_ROOT}/..
-PROJECT_PATH= E:\\GitHub\\Insight-Data-Engineering-Project
-
+PROJECT_PATH= '/Users/wangchunzi/Documents/GitHub/Insight-Data-Engineering-Project'
 
 
 function print_dir_contents {

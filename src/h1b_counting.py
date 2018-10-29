@@ -4,7 +4,7 @@ def sortByCount(item):
 
 # import csv module
 import csv
-# import regular expression modeule
+# import regular expression module
 import re
     
 # create dictionaries to hold the count of each job and state in the dataset
@@ -15,7 +15,7 @@ state = dict()
 count = 0
     
 # read the data
-with open('E:\GitHub\Insight-Data-Engineering-Project\insight_testsuite\tests\test_1\input\h1b_input.csv','r') as csv_file:
+with open('/Users/wangchunzi/Desktop/H1B_FY_2014.csv','r') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=';')
         
     # put data columns into a seperate list
@@ -35,10 +35,19 @@ with open('E:\GitHub\Insight-Data-Engineering-Project\insight_testsuite\tests\te
             job[row[job_index]] = job.get(row[job_index],0)+1
             state[row[state_index]] = state.get(row[state_index],0)+1
             count+=1
-    
+
+
 # find the top 10 jobs/states in the dictionary by value
-sorted_count = sorted(state.values())[-10:][::-1]
-sorted_count2 = sorted(job.values())[-10:][::-1]
+if len(state) >= 10:    
+    sorted_count = sorted(state.values())[-10:][::-1]
+else:
+    sorted_count = sorted(state.values())[::-1]
+    
+if len(job) >= 10:
+    sorted_count2 = sorted(job.values())[-10:][::-1]
+else:
+    sorted_count2 = sorted(job.values())[::-1]
+
     
 # put the selected jobs into a dataframe
 fields = ['TOP_OCCUPATIONS','NUMBER_CERTIFIED_APPLICATIONS','PERCENTAGE'] 
@@ -67,3 +76,4 @@ with open(filename, 'w') as csv_file:
     csv_writer = csv.writer(csv_file) 
     csv_writer.writerow(fields) 
     csv_writer.writerows(rows)
+    
