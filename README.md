@@ -18,4 +18,4 @@ Calculate **Top 10 Occupations** and **Top 10 States** for each year's certified
 
 The script can be found at `./src/h1b_counting.py`. You can run the script using `./run.sh`. 
 
-I have tested it with `./insight_testsuite/run_tests.sh`. If you put `H1B_FY_2014.csv, H1B_FY_2015.csv, H1B_FY_2016.csv` into the input folder and change the file names accordingly, it will run successfully too.
+I have tested it with `./insight_testsuite/run_tests.sh`. If you put `H1B_FY_2014.csv, H1B_FY_2015.csv, H1B_FY_2016.csv` into the input folder and change the file names accordingly (`h1b_input.csv`), it will run successfully too.
