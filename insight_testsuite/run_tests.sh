@@ -8,9 +8,7 @@ declare -r color_norm="${color_start}0m"
 
 GRADER_ROOT=$(dirname ${BASH_SOURCE})
 
-# PROJECT_PATH=${GRADER_ROOT}/..
-PROJECT_PATH= '/Users/wangchunzi/Documents/GitHub/Insight-Data-Engineering-Project'
-
+PROJECT_PATH=${GRADER_ROOT}/..
 
 function print_dir_contents {
   local proj_path=$1
@@ -31,6 +29,7 @@ function find_file_or_dir_in_project {
 
 # check project directory structure
 function check_project_struct {
+  echo ${PROJECT_PATH}
   find_file_or_dir_in_project ${PROJECT_PATH} run.sh
   find_file_or_dir_in_project ${PROJECT_PATH} src
   find_file_or_dir_in_project ${PROJECT_PATH} input
